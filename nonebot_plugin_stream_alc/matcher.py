@@ -1,3 +1,4 @@
+from nonebot import require
 from nonebot.log import logger
 from nonebot.rule import Rule
 
@@ -10,23 +11,26 @@ from arclet.alconna import (
     Option
 )
 
+sid_arg = Args["sid", int, None]
+
 alc = Alconna(
-    "pip",
+    "steam",
     Subcommand(
-        "install",
-        Args["package", str],
+        ".add",
+        alias=["绑定", "添加"],
+        sid_arg,
+        
         Option("-r|--requirement", Args["file", str]),
         Option("-i|--index-url", Args["url", str]),
-    )
-)
-
-
-from nonebot.plugin.on import (
-    on_command,
-    on_message,
-)
-from nonebot.adapters.onebot.v11 import (
-    Bot, 
-    MessageEvent, 
-    GroupMessageEvent
+    ),
+    Subcommand(
+        ".del",
+        alias=["解绑", "删除"],
+        sid_arg
+    ),
+    Subcommand(
+        ".rfrs",
+        alias=["刷新"],
+        sid_arg
+    ),
 )
