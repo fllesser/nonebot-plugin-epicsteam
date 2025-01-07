@@ -11,17 +11,15 @@ from arclet.alconna import (
     Option
 )
 
-sid_arg = Args["sid", int, None]
+sid_arg = Args["sid", "re:\d{10}", None]
+range_arg = Args["range", ".there|.global", ".there"]
 
 alc = Alconna(
     "steam",
     Subcommand(
         ".add",
         alias=["绑定", "添加"],
-        sid_arg,
-        
-        Option("-r|--requirement", Args["file", str]),
-        Option("-i|--index-url", Args["url", str]),
+        sid_arg
     ),
     Subcommand(
         ".del",
@@ -33,4 +31,19 @@ alc = Alconna(
         alias=["刷新"],
         sid_arg
     ),
+    Subcommand(
+        ".list",
+        alias=["列表"]
+    ),
+    Subcommand(
+        ".on",
+        alias=["开启"],
+        range_arg
+    ),
+    Subcommand(
+        ".off",
+        alias=["关闭"],
+        range_arg
+    )
+    
 )
