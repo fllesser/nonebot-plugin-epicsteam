@@ -14,12 +14,12 @@ from arclet.alconna import (
 range_args = Args["range", ".there|.global", ".there"]
 sid_args = Args["sid", "re:\d{10}", None]
 
-add_cmd = Subcommand(".add", alias=["绑定", "添加"], sid_args)
-del_cmd = Subcommand(".del", alias=["解绑", "删除"], sid_args)
-refresh_cmd = Subcommand(".rfrs", alias=["刷新"], sid_args)
+add_cmd = Subcommand(".add", sid_args，alias=["绑定", "添加"])
+del_cmd = Subcommand(".del", sid_args，alias=["解绑", "删除"])
+refresh_cmd = Subcommand(".rfrs", sid_args, alias=["刷新"])
 list_cmd = Subcommand(".list", alias=["列表"]),
-on_cmd = Subcommand(".on", alias=["开启"], range_arg)
-off_cmd = Subcommand(".off", alias=["关闭"], range_arg)
+on_cmd = Subcommand(".on", range_arg, alias=["开启"])
+off_cmd = Subcommand(".off", range_arg, alias=["关闭"])
 
 # 创建Alconna实例并添加子命令
 epic_alc = Alconna(
