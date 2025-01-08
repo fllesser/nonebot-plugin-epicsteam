@@ -15,8 +15,8 @@ from nonebot_plugin_apscheduler import scheduler
 from .matcher import alc
 
 __plugin_meta__ = PluginMetadata(
-    name="Steam游戏状态广播",
-    description="播报群友的Steam游戏状态",
+    name="Epic Steam游戏状态广播",
+    description="播报群友的Epic和Steam的游戏状态",
     usage="""首先获取自己的Steam ID，
         获取方法：
             获取Steam ID 64
@@ -42,7 +42,7 @@ __plugin_meta__ = PluginMetadata(
     """,
     type="application",
     config=Config,
-    homepage="https://github.com/fllesser/nonebot-plugin-steam-alc",
+    homepage="https://github.com/fllesser/nonebot-plugin-epicsteam",
     supported_adapters={"~onebot.v11"},
     extra={
         "author":"fllesser",

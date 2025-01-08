@@ -1,17 +1,15 @@
 [tool.poetry]
-name = "nonebot-plugin-steam-alc"
+name = "nonebot-plugin-epicsteam"
 version = "0.0.1"
 description = ""
 authors = ["fllesser <fllessive@gmail.com>"]
 readme = "README.md"
-packages = [{include = "nonebot_plugin_steam_alc"}]
+packages = [{include = "nonebot_plugin_epicsteam"}]
 repository = "https://github.com/fllesser"
 keywords = ["nonebot", "nonebot2"]
 
-
 [tool.poetry.dependencies]
 python = "^3.10"
-
 
 nonebot2 = "^2.4.0"
 nonebot-adapter-onebot = "^2.4.6"
@@ -25,7 +23,7 @@ nonebot2 = {version = "^2.4.0", extras = ["fastapi"]}
 
 [tool.nonebot]
 adapters = [{name="Onebot", module_name="nonebot.adapters.onebot.v11"}]
-plugins = ["nonebot_plugin_steam_alc"]
+plugins = ["nonebot_plugin_epicsteam"]
 
 [build-system]
 requires = ["poetry-core"]
