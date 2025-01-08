@@ -14,8 +14,8 @@ from arclet.alconna import (
 range_args = Args["range", ".there|.global", ".there"]
 sid_args = Args["sid", "re:\d{10}", None]
 
-add_cmd = Subcommand(".add", sid_args，alias=["绑定", "添加"])
-del_cmd = Subcommand(".del", sid_args，alias=["解绑", "删除"])
+add_cmd = Subcommand(".add", sid_args, alias=["绑定", "添加"])
+del_cmd = Subcommand(".del", sid_args, alias=["解绑", "删除"])
 refresh_cmd = Subcommand(".rfrs", sid_args, alias=["刷新"])
 list_cmd = Subcommand(".list", alias=["列表"]),
 on_cmd = Subcommand(".on", range_arg, alias=["开启"])
